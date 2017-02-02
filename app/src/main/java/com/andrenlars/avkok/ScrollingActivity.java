@@ -4,10 +4,13 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -22,10 +25,20 @@ public class ScrollingActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Resetting selection", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
+
+        Button button = (Button) findViewById(R.id.find);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            }
+
+
+        });
+
     }
 
     @Override
@@ -33,6 +46,10 @@ public class ScrollingActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_scrolling, menu);
         return true;
+    }
+
+    public void selfDestruct(View view)  {
+
     }
 
     @Override
