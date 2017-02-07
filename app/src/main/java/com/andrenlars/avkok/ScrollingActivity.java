@@ -10,7 +10,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -38,6 +40,16 @@ public class ScrollingActivity extends AppCompatActivity {
 
 
         });
+
+
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(this, R.layout.listview_item);
+        stringArrayAdapter.add("Hello there");
+        stringArrayAdapter.add("Bom dia");
+
+        ListView view = (ListView) findViewById(R.id.listview);
+
+
+        view.setAdapter(stringArrayAdapter);
 
     }
 
